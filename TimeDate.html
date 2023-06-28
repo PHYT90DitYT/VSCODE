@@ -1,0 +1,31 @@
+
+<html>
+    <canvas style="background-color:black;" width="800" height="130" id="myCanvas"></canvas>
+    <script>
+        canvas = document.getElementById("myCanvas");
+        ctx = canvas.getContext("2d");
+
+        function update(){
+            // Update the objects.
+            today = new Date();
+        }
+
+        function draw(){
+            // Clear Canvas
+            ctx.clearRect(0,0,canvas.width,canvas.height);
+
+            // Then, draw objects.
+            // Set properties that affect the font.
+            ctx.fillStyle = "#ffFFFF";
+            ctx.textAlign = "center";
+            ctx.font = "18px Cousine";
+            ctx.fillText("Today's date is: "+today, canvas.width/2, canvas.height/2);
+        }
+
+        function gameLoop(){
+            update();
+            draw();
+        }
+        setInterval(gameLoop,50);
+    </script>
+</html>
